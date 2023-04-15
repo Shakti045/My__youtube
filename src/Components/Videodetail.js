@@ -40,7 +40,7 @@ useEffect(()=>{
     return (
         <div>
          <h1 className=" text-lg font-bold">{props?.snippet?.title}</h1>
-         <div className=" flex gap-5">
+         <div className=" grid grid-cols-3 items-center justify-center lg:flex gap-5">
           
             <p>Views:</p><span>{props?.statistics?.viewCount}</span>
             

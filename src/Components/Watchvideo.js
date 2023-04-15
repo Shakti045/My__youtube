@@ -5,6 +5,7 @@ import Videocard from "./Videocard";
 import Videpdetail from "./Videodetail.js"
 import { useContext } from "react";
 import { Appcontext } from "../Appcontext/Appcontextprovider";
+import "./reactplayer.css"
 
 
 
@@ -47,18 +48,18 @@ useEffect(()=>{
 
 
     return (
-           <div className={` ${theme===true?"bg-black text-white":"bg-white text-black"} absolute  -z-30 w-[100vw] h-[100vh] flex  pl-8 `}>
-            <div className="flex flex-col">
-            <ReactPlayer url={`https://www.youtube.com/watch?v=${vid}`} controls={true}  playing={true}></ReactPlayer>.
+           <div className={` ${theme===true?"bg-black text-white":"bg-white text-black"} absolute  -z-30 w-[100vw] h-[100vh] lg:flex lg:gap-10 lg:pl-8 `}>
+            <div className="flex  flex-col">
+            <ReactPlayer width={"full"}  url={`https://www.youtube.com/watch?v=${vid}`} controls={true}  playing={true}></ReactPlayer>.
             <Videpdetail {...videodetail}></Videpdetail>
             </div>
            
-            <div className={`w-full flex flex-col gap-4 ${theme===true?"bg-black text-white":"bg-white text-black"}  items-center`}>
+            <div className={`w-full flex flex-col gap-4 ${theme===true?"bg-black text-white":"bg-white text-black"} items-center`}>
             <h1 className={`font-bold text-4xl text-center ${theme===true?"text-red-500":"text-blue-500"} `}>Suggested Videos</h1>
-            <div className={`overflow-y-auto w-full ${theme===true?"bg-black text-white":"bg-white text-black"} flex flex-col gap-4  items-center`}>
+            <div className={` overflow-y-auto w-full ${theme===true?"bg-black text-white":"bg-white text-black"} lg:grid lg:grid-cols-2 lg:gap-2`}>
                 {
                     sugestvideo.map((data)=>{
-                        return (<Videocard key={data.id.videoId} {...data}></Videocard>)
+                        return (<Videocard  key={data.id.videoId} {...data}></Videocard>)
                     })
                 }
                 </div>

@@ -21,14 +21,14 @@ function Navbar(){
         
     }
     return (
-        <div className={`lg:pl-5 lg:pr-5 pl-0 pr-0 flex justify-between items-center ${theme===true?"bg-black text-white":"bg-white text-black"} text-2xl`}>
+        <div className={`lg:pl-5 lg:pr-5 pl-0 pr-0 grid grid-cols-2 lg:flex justify-between items-center ${theme===true?"bg-black text-white":"bg-white text-black"} text-2xl`}>
           <div>
             <NavLink to="/"><img src={theme===true?logo:logowhite} className="h-[90px]"></img></NavLink>
           </div>
-          <div className={`flex gap-1 ${theme===true?"bg-richblack-700":"bg-gray-300"} px-3  rounded-md`}>
+          <div className={`flex   gap-1 ${theme===true?"bg-richblack-700":"bg-gray-300"} px-3  rounded-md`}>
             <form onSubmit={submithandler}>
 
-            <input spellCheck="false" className={` border-none w-[30vw] px-5 py-3 bg-transparent rounded-lg ${theme===true?"text-wite":"text-red-600"} text-sm outline-none`} type="text" value={searchvalue} placeholder="Search for anything" onChange={handler}></input>
+            <input spellCheck="false" className={`  border-none w-[30vw] px-5 py-3 bg-transparent rounded-lg ${theme===true?"text-wite":"text-red-600"} text-sm outline-none`} type="text" value={searchvalue} placeholder="Search for anything" onChange={handler}></input>
             <button className="relative top-1"><AiOutlineSearch className="text-red-600"></AiOutlineSearch></button>
             </form>
           </div>
